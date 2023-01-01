@@ -28,7 +28,6 @@ func (c *Cryptography) Encrypt(stringToEncrypt string) (string, error) {
 	cfb := cipher.NewCFBEncrypter(block, bytes)
 	cipherText := make([]byte, len(plainText))
 	cfb.XORKeyStream(cipherText, plainText)
-	fmt.Print("str", stringToEncrypt)
 	return encode(cipherText), nil
 }
 
